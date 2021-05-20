@@ -1,9 +1,18 @@
 {
   "name": "xsystem",
-  "version": "1.0.0",
-  "description": "A operating sytem inside a browser",
+  "version": "0.1.0",
+  "description": "Desktop Operating System in a browser",
+  "private": true,
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "next": "10.2.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "repository": {
     "type": "git",
