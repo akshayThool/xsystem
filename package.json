@@ -2,7 +2,6 @@
   "name": "xsystem",
   "version": "0.1.0",
   "description": "Desktop Operating System in a browser",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
