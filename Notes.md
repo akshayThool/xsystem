@@ -24,3 +24,21 @@ We have also added Sass guidelines in our project using the [stylelint-config-sa
 ## How to run eslint with --fix
 
 Use command `npm run eslint -- --fix`
+
+## Added Jest Testing Library
+
+We have added jest inorder to test this project, we have installed packages `Jest`, `@testing-library/jest-dom`, `@testing-library/react`, and pluggin for esling lint called `eslint-plugin-jest`. In `eslintrc.json` file we have added both the env for jest and the installed jest plugin. We have created a `__tests__` folder inside the rootdir of the project which will contain all the test files for our project. And we have created a test file naming `index.spec.tsx`, which had a few issues like it was not able to find the absolute path of the `pages/index` and it was asking to add the missing file extension i.e tsx.
+
+The absolute path problem was sorted out by creating a new config file for jest naming `jest.config.js`, in which we added a line called `moduleDirectories: ['node_modules', '.']` and for the missing extention file problem we added the import/extensions rule in the eslintrc.json file.
+
+The code had a expect function called `tobeinthedocument()`, this function is not part of the jest library. So we installed the `@testing-library/jest-dom` package and imported the same into the project by creating a new setup fle for jest naming jestSetup.js and adding the line `import '@testing-library/jest-dom/extend-expect'`. This brought in a new error in the eslint state that this package should not be part of devDependencies, so we added another rule in eslintrc.json file i.e `import/no-extraneous-dependencies`. In order to run the tests, we have created two scripts one is test which will run the tests and another test:watch which will test as we are solving the problems.
+
+## Added Github WorkFlow Actions
+
+We have added gitbub workflow actions in our project by creating the .github directory and workflows directory inside it. In the workflow directory we added another file called main.yml which had a few yml commands that the github will use to test the project as soon as it gets pushed in the remote repository. The syntax of the yml file can be found [here](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions).
+
+## Code Checking
+
+We have performed code checking on the site [w3 Validator](https://validator.w3.org/). After performing the checking directly on the source code, we found out that our page needed a language info and a title. In order to achieve that we have created another tsx file inside the `pages` folder naming `_document.tsx`, we have got the information about it [here](https://nextjs.org/docs/advanced-features/custom-document). And copied the first example of the document. The eslint was showing some error regarding typechecking, we added two types as `DocumentContext` and `DocumentInitialProps` in the file, also the `render()` function was given the type of `ReactElement`.
+
+We added `lang` attribute to the html element tag and in order to provide title, we have added head elememt in the `_app.tsx` file. The title of the project was taken from the `name` attribute present in the `package.json` file.
