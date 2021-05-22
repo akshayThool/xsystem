@@ -16,3 +16,11 @@ We have also added extra eslint guidelines in our project using the package [esl
 ## Added Sass Guidelines
 
 We have also added Sass guidelines in our project using the [stylelint-config-sass-guidelines](https://github.com/bjankord/stylelint-config-sass-guidelines). This configs the sass guidelines properly with the stylelint.
+
+## Added Husky pre-commit hook support
+
+[Husky](https://github.com/typicode/husky) is a tool that allows us to easily wrangle Git hooks and run the scripts we want at those stages. It works by including an object right within our package. json file that configures Husky to run the scripts we specify. After that, Husky handles managing at which point in the Git lifecycle our scripts will run.
+
+## How to run eslint with --fix
+
+Use command `npm run eslint -- --fix`
