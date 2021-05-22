@@ -3,3 +3,4 @@
 /out
 /.husky
 .prettierignore
+/.github/workflows/main.yml
