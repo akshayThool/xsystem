@@ -4,7 +4,7 @@ import 'styles/globals.scss';
 import type { AppProps } from 'next/app';
 // eslint-disable-next-line import/order
 import Head from 'next/head';
-import { name } from 'package.json';
+import { description, name } from 'package.json';
 import type { ReactElement } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps): ReactElement {
@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
     <>
       <Head>
         <title>{name}</title>
+        <meta name="description" content={description} />
       </Head>
       <Component {...pageProps} />
     </>
