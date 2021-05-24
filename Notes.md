@@ -46,3 +46,17 @@ We added `lang` attribute to the html element tag and in order to provide title,
 ## Using Lighthouse
 
 [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) is an open-source, automated tool for improving the performance, quality, and correctness of your web apps. We have used Lighthouse to get results out of our created websites. It had showed a little performance issue and also a little bit on Search Engine Optimization. There was suggestion in the results, that we should add `meta` tag for description in our project in order to improve our site's SEO. So we have added the same in the head of the `_api.tsx` file.
+
+## Storybook UI
+
+[Storybook](https://storybook.js.org/) is an open source tool for building UI components and pages in isolation. It streamlines UI development, testing, and documentation. But we have not used it, as it is a lot of code to achieve something so little. One can look into this [repo](https://github.com/vercel/next.js/tree/canary/examples/with-storybook) for its further use in the next js.
+
+## Styled Components
+
+The very first step is to uninstall `sass` that is in our dependencies list, we are doing it by using the command `npm uninstall sass`. We have then installed the styled components by command `npm install --save styled-components`. The Documentation states that -
+
+> Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components. It also removes the mapping between components and styles – using components as a low-level styling construct could not be easier!
+
+We have added Styled Component based on the two repos one being called [with-typescript-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-typescript-styled-components) and [with-styled-components](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components).
+
+We have also added `ThemeProvider` in our project in order to provide a proper color codes and styling across all the pages in the web application. By providing the `ThemeProvider` our only test case failed, it was complaining about primary attribute it didn't know. So we fixed it by adding `ThemeProvider` in the `index.spec.test` file and putting the theme in the `defaultTheme.json` file.
